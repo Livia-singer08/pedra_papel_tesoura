@@ -1,2 +1,14 @@
-# pedra_papel_tesoura
-Atividade de Front End - Site de Pedra, Papel, Tesoura, Lagarto e Spock - Realizado dia 20/05
+# Pedra Papel Tesoura
+Atividade de front-end para aprenser github fork e pullrequest
+
+## Tecnologias
+- VsCode
+- HTML, CSS, JavaScript
+
+## Passo a passo para testar
+- Clone o repositório
+- Abra com VsCode
+- Execute o index.html com o Live Server
+
+## Print
+![Print](./images/tela.png)

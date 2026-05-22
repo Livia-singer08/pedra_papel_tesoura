@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background: #F7EEED;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.introducao{
+    margin-top: 40px;
+
+    border-radius: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1000px;
+
+    border: solid 2px #FAE6E7;
+
+    height: 200px;
+}
+
+.introducao img{
+    padding: 20px;
+    width: 30%;
+    min-width: 150px;
+    border-radius: 10px;
+}
+
+.placar{
+    background-color: white;
+
+    width: 200px;
+    height: 150px;
+
+    margin-right: 20px;
+
+    border-radius: 10px;
+
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score{
+    color: blue;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.pontuacao{
+    font-size: 50px;
+    font-weight: bold;
+    color: #534f65;
+}
+
+.jogo{
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+
+    justify-content: center;
+    display: flex;
+
+    margin-top: 120px;
+
+    width: 100%;
+    max-width: 750px;
+
+    height: 650px;
+}
+
+.triangulo{
+    width: 75%;
+    opacity: .4;
+    position: absolute;
+    top: 80px;
+}
+
+.opcao{
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    border: 30px solid;
+
+    width: 180px;
+    height: 180px;
+
+    animation: opacidade 1s linear;
+    animation: rotatez 1s linear;
+
+    transition: .4s;
+}
+
+.opcao:hover{
+    animation: luzDeFundo 2s ease infinite;
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+.opcao img{
+    width: 100%;
+    transition: .5s;
+}
+
+.opcao img:hover{
+    transform: rotateY(360deg);
+}
+
+.conteiner{
+    position: absolute;
+}
+
+.conteiner-papel{
+    top: 0px;
+    left: 60px;
+}
+
+.conteiner-tesoura{
+    top: 0px;
+    right: 60px;
+}
+
+.conteiner-pedra{
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.conteiner-lagarto{
+    bottom: 160px;
+    left: 0px;
+}
+
+.conteiner-spock{
+    bottom: 160px;
+    right: 0px;
+}
+
+.papel{
+    border-color: #dd04ae;
+    box-shadow:
+    0px 7px 0px #eb31c3,
+    inset 0px 7px #d6d6d6;
+}
+
+.tesoura{
+    border-color: #07d99d;
+    box-shadow:
+    0px 7px 0px #71e89a,
+    inset 0px 7px #d6d6d6;
+}
+
+.pedra{
+    border-color: #f7f316;
+    box-shadow:
+    0px 7px 0px #e5f369,
+    inset 0px 7px #d6d6d6;
+}
+
+.lagarto{
+    border-color: #7d3cff;
+    box-shadow:
+    0px 7px 0px #9866ff,
+    inset 0px 7px #d6d6d6;
+}
+
+.spock{
+    border-color: #00b7ff;
+    box-shadow:
+    0px 7px 0px #63d6ff,
+    inset 0px 7px #d6d6d6;
+}
+
+.regras{
+    width: 500px;
+    height: 500px;
+
+    background-color: white;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 100;
+}
+
+.regras img{
+    width: 100%;
+}
+
+.regras-titulo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.regras-titulo button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.regras-button{
+    position: fixed;
+
+    bottom: 1%;
+    left: 50%;
+
+    transform: translate(-50%);
+
+    height: 50px;
+    width: 150px;
+
+    border-radius: 10px;
+
+    background-color: transparent;
+
+    border: 2px solid #534f65;
+
+    font-size: 15px;
+
+    color: #534f65;
+
+    transition: .4s;
+}
+
+.regras-button:hover{
+    background-color: #534f65;
+    color: white;
+    cursor: pointer;
+}
+
+.gameplay{
+    display: none;
+
+    width: 100%;
+    max-width: 1200px;
+
+    justify-content: space-evenly;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 50px;
+}
+
+.display{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 50%;
+}
+
+.display h2{
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    font-size: 22px;
+
+    color: #534f65;
+
+    width: 250px;
+
+    text-align: center;
+}
+
+.test,
+.test1{
+    border-radius: 50%;
+}
+
+/* RESULTADO */
+
+.result{
+    font-size: 45px;
+
+    color: #534f65;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.playAgain{
+    width: 250px;
+    height: 50px;
+
+    border-radius: 10px;
+
+    color: rgba(0,0,0);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 15px;
+
+    border: none;
+
+    transition: .4s;
+}
+
+.playAgain:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.fim{
+    margin: 20px;
+
+    display: none;
+
+    animation: opacidade 2s linear;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes opacidade{
+
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes rotatez{
+
+    from{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes luzDeFundo {
+
+    0%{
+        box-shadow: 0px 0px 0px 0px;
+    }
+
+    50%{
+        box-shadow: 0px 0px 120px 10px rgba(83,79,101,.4);
+    }
+
+    100%{
+        box-shadow: 0px 0px 0px 0px;
+    }
+}
+
+@media(max-width: 900px){
+
+    .opcao{
+        width: 140px;
+        height: 140px;
+        border-width: 20px;
+    }
+
+    .jogo{
+        height: 550px;
+    }
+}
+
+@media(max-width: 650px){
+
+    .introducao{
+        width: 90%;
+        height: 150px;
+    }
+
+    .placar{
+        width: 120px;
+        height: 100px;
+    }
+
+    .pontuacao{
+        font-size: 35px;
+    }
+
+    .jogo{
+        height: 500px;
+        max-width: 400px;
+    }
+
+    .triangulo{
+        width: 90%;
+    }
+
+    .opcao{
+        width: 110px;
+        height: 110px;
+    }
+
+    .conteiner-papel{
+        left: 10px;
+    }
+
+    .conteiner-tesoura{
+        right: 10px;
+    }
+
+    .conteiner-lagarto{
+        left: -10px;
+    }
+
+    .conteiner-spock{
+        right: -10px;
+    }
+
+    .result{
+        font-size: 30px;
+    }
+
+    .display h2{
+        font-size: 16px;
+    }
+
+    .regras{
+        width: 90%;
+        height: auto;
+    }
+}
